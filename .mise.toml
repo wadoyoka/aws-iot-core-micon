@@ -1,0 +1,24 @@
+[tools]
+python = "3.12"
+# PlatformIO Core（pipx バックエンド。uv があれば uv tool で入る）
+"pipx:platformio" = "6.1.19"
+
+[tasks.build]
+description = "ファームウェアをビルド"
+run = "pio run"
+
+[tasks.upload]
+description = "ビルドして XIAO ESP32S3 に書き込み"
+run = "pio run -t upload"
+
+[tasks.monitor]
+description = "シリアルモニタ (115200bps)"
+run = "pio device monitor"
+
+[tasks.flash]
+description = "書き込み後にシリアルモニタを開く"
+run = ["pio run -t upload", "pio device monitor"]
+
+[tasks.clean]
+description = "ビルド成果物を削除"
+run = "pio run -t clean"

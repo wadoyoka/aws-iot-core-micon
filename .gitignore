@@ -1,0 +1,10 @@
+.pio/
+.vscode/*
+!.vscode/extensions.json
+
+# 認証情報（include/secrets.example.h をコピーして作成）
+include/secrets.h
+# AWS IoT からダウンロードした証明書・秘密鍵
+certs/
+
+.DS_Store
